@@ -1,12 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+const express = require('express');
+const morgan = require('morgan');
+const path = require('path');
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const app = express();
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+// Settings
+app.set('port', process.env.PORT || 3000);
+
+// Middlewares
+app.use(morgan('dev'));
+app.use(express.json());
+
+// Routes 
+app.use('/api/members', require('./routes/members.routes'));
+
+// Static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Starting the server
+app.listen(app.get('port'), ()=>{
+  console.log(`[Server Init] Server on port ${app.get('port')}`);
+})
