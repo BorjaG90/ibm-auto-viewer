@@ -9,9 +9,13 @@ A simple webapp to view advanced data.
 ## Installing
 ` npm install `
 
+` cd ./backend && npm install `
+
+` cd ./client && npm install `
+
 
 ## Usage
-`npm start`
+` npm start `
 
 ## Built With
 ### Backend
@@ -22,7 +26,7 @@ A simple webapp to view advanced data.
 
 ### Frontend
 <a href="https://es.reactjs.org/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/reactJs.png" width=50 alt="ReactJS"></a>
-
+<a href="https://materializecss.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/materialize.png" width=50 alt="Materialize"></a>
 ### Platforms
 <a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/vscode.png" width=50 alt="VSCode"></a>
 

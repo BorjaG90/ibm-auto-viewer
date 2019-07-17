@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Nav from './components/Menu/Menu';
 
 
 class App extends Component {
 
   state = {
-    profile: {"username": "Prueba"}
+    profile: {},
+    roster: {}
   }
 
   componentDidMount() {
@@ -23,6 +25,13 @@ class App extends Component {
   render() {
     return (
       <div>
+        <Nav
+          username={this.state.profile.username}
+          teamname={this.state.profile.team_name}
+          money={this.state.profile.money}
+          color_prim={this.state.profile.color_prim}
+          color_sec={this.state.profile.color_sec}
+        />
         <h1>IBM Auto Viewer</h1>
       </div>
     )
