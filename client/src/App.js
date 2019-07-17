@@ -4,9 +4,7 @@ import React, { Component } from 'react';
 class App extends Component {
 
   state = {
-    profile: {
-      "username": "Prueba"
-    }
+    profile: {"username": "Prueba"}
   }
 
   componentDidMount() {
@@ -14,7 +12,7 @@ class App extends Component {
 	}
 
 	fetchProfile() {
-		fetch('/api/profile') // Petición GET
+		fetch('http://localhost:4000/api/profile') // Petición GET
 			.then(res => res.json())
 			.then(data => {
 					console.log(data);
