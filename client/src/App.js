@@ -1,38 +1,58 @@
 import React, { Component } from 'react';
-import Nav from './components/Menu/Menu';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+
+import Menu from './components/Menu/Menu';
+import Roster from './components/Roster/Roster';
 
 
 class App extends Component {
 
   state = {
-    profile: {},
-    roster: {}
+    profile: {}
   }
 
-  componentDidMount() {
-		this.fetchProfile();
-	}
-
+  componentWillMount() {
+    this.fetchProfile();
+  }
+  
 	fetchProfile() {
 		fetch('http://localhost:4000/api/profile') // Petición GET
 			.then(res => res.json())
 			.then(data => {
-					console.log(data);
-					this.setState({profile: data});
-			})
-	}
+        this.setState({profile: data});
+      })
+  }
 
   render() {
     return (
-      <div>
-        <Nav
+      <div className="container">
+        <Menu
           username={this.state.profile.username}
           teamname={this.state.profile.team_name}
           money={this.state.profile.money}
           color_prim={this.state.profile.color_prim}
           color_sec={this.state.profile.color_sec}
         />
-        <h1>IBM Auto Viewer</h1>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>País</th>
+              <th>Nombre</th>
+              <th>Pos.</th>
+              <th>Edad</th>
+              <th>Altura</th>
+              <th>Peso</th>
+              <th>Ficha</th>
+              <th>Años C.</th>
+              <th>Cláusula</th>
+              <th>Canon</th>
+            </tr> 
+          </thead>
+          <tbody>
+            <Roster id_team={this.state.profile.id_team} />
+          </tbody>
+        </table>
       </div>
     )
   }

@@ -18,6 +18,7 @@ app.use(express.json());
 
 // Routes 
 app.use('/api/profile', require('./routes/profile.routes'));
+app.use('/api/roster', require('./routes/roster.routes'));
 
 // Static files
 app.use(express.static(path.join(__dirname, 'public')));

@@ -12,7 +12,7 @@ class Menu extends PureComponent {
 
       <nav className="nav-extended" style={navStyle}>
         <div className="nav-wrapper">
-          <a href="/" className="center brand-logo">Logo</a>
+          <a href="/" className="center brand-logo">IBM Auto Manager</a>
           <a href="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
