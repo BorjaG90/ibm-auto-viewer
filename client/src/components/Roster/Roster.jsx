@@ -24,38 +24,33 @@ class Roster extends Component {
   }
 
   render(){
-    if(typeof this.props.team_id !== 'number') {
-      console.log("VACÍO");
-      return null;
-    }else {
-      const players = this.state.senior_roster.map(player =>
-        <Player
-          player={player}
-          key={player.id_player}
-        />
-      )
+    const players = this.state.senior_roster.map(player =>
+      <Player
+        player={player}
+        key={player.id_player}
+      />
+    )
 
-      return <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>País</th>
-            <th>Nombre</th>
-            <th>Pos.</th>
-            <th>Edad</th>
-            <th>Altura</th>
-            <th>Peso</th>
-            <th>Ficha</th>
-            <th>Años C.</th>
-            <th>Cláusula</th>
-            <th>Canon</th>
-          </tr> 
-        </thead>
-        <tbody>
-          {players}
-        </tbody>
-      </table>
-      }
+    return <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>País</th>
+          <th>Nombre</th>
+          <th>Pos.</th>
+          <th>Edad</th>
+          <th>Altura</th>
+          <th>Peso</th>
+          <th>Ficha</th>
+          <th>Años C.</th>
+          <th>Cláusula</th>
+          <th>Canon</th>
+        </tr> 
+      </thead>
+      <tbody>
+        {players}
+      </tbody>
+    </table>
   }
 }
 

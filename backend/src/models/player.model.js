@@ -14,7 +14,7 @@ const PlayerSchema = new Schema({
     clause: { type: Number, required: true },
     years: { type: Number, required: true },
     juvenil: { type: Boolean, required: true },
-    country: { type: Number, required: true }
+    country: { type: String, required: true }
 });
 
 module.exports = mongoose.model('Player', PlayerSchema);
