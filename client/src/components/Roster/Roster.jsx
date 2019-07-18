@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 
 import Player from './Player'
 
 import './style.css';
 
-class Roster extends Component {
+class Roster extends PureComponent {
 
   state = {
     senior_roster: []
@@ -24,13 +24,6 @@ class Roster extends Component {
   }
 
   render(){
-    const players = this.state.senior_roster.map(player =>
-      <Player
-        player={player}
-        key={player.id_player}
-      />
-    )
-
     return <table className="responsive-table centered striped">
       <thead>
         <tr>
@@ -48,7 +41,9 @@ class Roster extends Component {
         </tr> 
       </thead>
       <tbody>
-        {players}
+        {this.state.senior_roster.map(player =>
+          <Player player={player} key={player.id_player} />
+        )}
       </tbody>
     </table>
   }

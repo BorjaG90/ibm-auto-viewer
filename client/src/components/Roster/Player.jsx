@@ -6,7 +6,10 @@ import './style.css';
 class Player extends PureComponent {
   render(){
     const { player, key } = this.props;
-    var nf = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
+    var nf = new Intl.NumberFormat('es-ES', 
+      { style: 'currency', currency: 'EUR' }
+    );
 
     return <tr key={key}>
       <td>{player.id_player}</td>
