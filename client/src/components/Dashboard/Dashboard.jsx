@@ -4,6 +4,7 @@ import { Route, Switch } from 'react-router-dom'
 
 import Menu from './Menu';
 import Roster from '../Roster/Roster'
+import Market from '../Market/Market';
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -19,7 +20,9 @@ class Dashboard extends Component {
             <Roster {...props} team_id={this.props.team_id} />
           }/>
 
-
+          <Route path="/market" render={props => 
+            <Market />
+          }/>
 
         </Switch>
       </div>
