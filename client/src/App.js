@@ -8,10 +8,11 @@ import Roster from './components/Roster/Roster';
 class App extends Component {
 
   state = {
-    profile: {}
+    profile: {},
+    isLoading: true
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.fetchProfile();
   }
   
@@ -19,11 +20,22 @@ class App extends Component {
 		fetch('http://localhost:4000/api/profile') // Petición GET
 			.then(res => res.json())
 			.then(data => {
-        this.setState({profile: data});
+        this.setState({
+          profile: data,
+          isLoading: false});
       })
   }
 
   render() {
+    let roster_grid
+    if(this.state.isLoading) {
+      console.log("SPINNER");
+      roster_grid = null // or you can render laoding spinner here
+    } else {
+      console.log("CARGADO");
+      roster_grid = <Roster team_id={this.state.profile.id_team} />
+    }
+
     return (
       <div className="container">
         <Menu
@@ -33,26 +45,7 @@ class App extends Component {
           color_prim={this.state.profile.color_prim}
           color_sec={this.state.profile.color_sec}
         />
-        <table>
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>País</th>
-              <th>Nombre</th>
-              <th>Pos.</th>
-              <th>Edad</th>
-              <th>Altura</th>
-              <th>Peso</th>
-              <th>Ficha</th>
-              <th>Años C.</th>
-              <th>Cláusula</th>
-              <th>Canon</th>
-            </tr> 
-          </thead>
-          <tbody>
-            <Roster id_team={this.state.profile.id_team} />
-          </tbody>
-        </table>
+        {roster_grid}
       </div>
     )
   }

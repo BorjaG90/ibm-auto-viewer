@@ -5,8 +5,8 @@ import './style.css';
 
 class Player extends PureComponent {
   render(){
-    
     const { player, key } = this.props;
+    var nf = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 
     return <tr key={key}>
       <td>{player.id_player}</td>
@@ -14,19 +14,19 @@ class Player extends PureComponent {
       <td>{player.name}</td>
       <td>{player.position}</td>
       <td>{player.age}</td>
-      <td>{player.height}</td>
-      <td>{player.weigth}</td>
-      <td>{player.salary}</td>
+      <td>{player.heigth / 100} m.</td>
+      <td>{player.weight} Kg.</td>
+      <td>{nf.format(player.salary)} </td>
       <td>{player.years}</td>
-      <td>{player.clause}</td>
-      <td>{player.canon}</td>
+      <td>{nf.format(player.clause)}</td>
+      <td>{player.canon / 100} %</td>
     </tr> 
   }
 }
 
 // Validation
-/*Player.propTypes = {
+Player.propTypes = {
   player: PropTypes.object.isRequired
-}*/
+}
 
 export default Player

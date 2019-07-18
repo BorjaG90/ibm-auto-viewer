@@ -7,18 +7,24 @@ class Menu extends PureComponent {
     let navStyle = {
       backgroundColor: color_prim
     };
+    let titleStyle = {
+      color: color_sec
+    };
     var nf = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+
     return (
 
       <nav className="nav-extended" style={navStyle}>
         <div className="nav-wrapper">
-          <a href="/" className="center brand-logo">IBM Auto Manager</a>
+          <a href="/" className="center brand-logo" style={titleStyle}>
+            IBM Auto Manager
+          </a>
           <a href="/" data-target="mobile-demo" className="sidenav-trigger">
             <i className="material-icons">menu</i>
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li className="info">{username}</li>
-            <li className="info info-team">{teamname}</li>
+            <li className="info info-team" style={titleStyle}>{teamname}</li>
             <li className="info">{nf.format(money)}</li>
           </ul>
         </div>
