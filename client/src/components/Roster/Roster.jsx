@@ -31,7 +31,7 @@ class Roster extends Component {
       />
     )
 
-    return <table>
+    return <table className="responsive-table centered striped">
       <thead>
         <tr>
           <th>ID</th>
