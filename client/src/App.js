@@ -38,14 +38,21 @@ class App extends Component {
 
     return (
       <div className="container">
-        <Menu
-          username={this.state.profile.username}
-          teamname={this.state.profile.team_name}
-          money={this.state.profile.money}
-          color_prim={this.state.profile.color_prim}
-          color_sec={this.state.profile.color_sec}
-        />
-        {roster_grid}
+        <Router>
+          <Route exact path="/" render={() => {
+            return <div>
+              <Menu
+                username={this.state.profile.username}
+                teamname={this.state.profile.team_name}
+                money={this.state.profile.money}
+                color_prim={this.state.profile.color_prim}
+                color_sec={this.state.profile.color_sec}
+              />
+              {roster_grid}
+            </div>
+          }}></Route>
+        </Router>
+        
       </div>
     )
   }
