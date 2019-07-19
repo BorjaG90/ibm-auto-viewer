@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const AuctionSchema = new Schema({
-    id_player: { type: Number, required: true },
+    player_id: { type: Number, ref: 'Player', required: true },
     position: { type: String, required: true },
     age: { type: Number, required: true },
     average: { type: Number, required: true },

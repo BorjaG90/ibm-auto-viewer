@@ -34,7 +34,7 @@ class App extends Component {
     } else {
       console.log("CARGADO");
       dashboard = <Dashboard 
-        team_id={this.state.profile.id_team}
+        team_id={this.state.profile.team_id}
         color_prim={this.state.profile.color_prim}
       />
     }

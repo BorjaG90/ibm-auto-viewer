@@ -12,7 +12,7 @@ class Menu extends Component {
         <div className="nav-content">
           <ul className="tabs tabs-transparent">
             <li className="tab"><Plantilla/></li>
-            <li className="tab disabled"><Mercado/></li>
+            <li className="tab"><Mercado/></li>
           </ul>
         </div>
       </div>
