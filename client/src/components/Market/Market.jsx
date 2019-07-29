@@ -23,7 +23,7 @@ class Market extends PureComponent {
     return <table className="responsive-table centered striped">
       <thead>
         <tr>
-          <th>ID</th>
+          <th>Nombre / ID</th>
           <th>Fecha</th>
           <th>Posicion</th>
           <th>Edad</th>

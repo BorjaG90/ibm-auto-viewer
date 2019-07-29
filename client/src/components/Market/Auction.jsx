@@ -12,13 +12,25 @@ class Auction extends PureComponent {
       { style: 'currency', currency: 'EUR' }
     );
 
+    let identificator;
+    if (auction.player !== null){
+      identificator = auction.player.name
+    } else {
+      identificator = auction._id
+    }
+
     return <tr key={key}>
-      <td>{auction.id_player}</td>
+      <td>{identificator}</td>
       <td>{
         moment.utc(
           auction.date_auction
         ).format('HH:mm DD-MM-YYYY')}  
-        {" / " + moment.utc(auction.date_auction).fromNow()} </td>
+        {" / " + moment.utc(auction.date_auction).fromNow()
+          .replace("in ","en ")
+          .replace(" hour"," hora")
+          .replace(" a", " un")
+          .replace(" day", " día")} 
+        </td>
       <td>{auction.position}</td>
       <td>{auction.age}</td>
       <td>{auction.average }</td>
