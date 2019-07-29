@@ -12,8 +12,6 @@ class Player extends PureComponent {
     );
 
     return <tr key={key}>
-      <td>{player._id}</td>
-      <td>{player.country}</td>
       <td>{player.name}</td>
       <td>{player.position}</td>
       <td>{player.age}</td>
@@ -22,8 +20,9 @@ class Player extends PureComponent {
       <td>{nf.format(player.salary)} </td>
       <td>{player.years}</td>
       <td>{nf.format(player.clause)}</td>
-      <td>{player.canon / 100} % : {player.total / 100}</td>
-    </tr> 
+      <td>{player.canon / 100} %</td>
+      <td>{player.country}</td>
+    </tr>
   }
 }
 

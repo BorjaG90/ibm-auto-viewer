@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 
 import Player from './Player'
+import Attributes from './Attributes'
 
 import './style.css';
 
@@ -24,28 +25,31 @@ class Roster extends PureComponent {
   }
 
   render(){
-    return <table className="responsive-table centered striped">
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>País</th>
-          <th>Nombre</th>
-          <th>Pos.</th>
-          <th>Edad</th>
-          <th>Altura</th>
-          <th>Peso</th>
-          <th>Ficha</th>
-          <th>Años C.</th>
-          <th>Cláusula</th>
-          <th>Canon</th>
-        </tr> 
-      </thead>
-      <tbody>
-        {this.state.senior_roster.map(player =>
+    return <div className="responsive-table centered striped">
+      <div className="row">
+        <table>
+          <tr>
+            <th>Nombre</th>
+            <th>Pos.</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Ficha</th>
+            <th>Años C.</th>
+            <th>Cláusula</th>
+            <th>Canon</th>
+            <th>País</th>
+          </tr>
+
+      {this.state.senior_roster.map(player => 
+        <React.Fragment>
           <Player player={player} key={player.id_player} />
-        )}
-      </tbody>
-    </table>
+          <Attributes player={player} key={player.id_player} />
+        </React.Fragment>
+      )}
+      </table>
+      </div>
+    </div>
   }
 }
 
