@@ -29,6 +29,7 @@ class Market extends PureComponent {
           <th>Edad</th>
           <th>Media</th>
           <th>Puja</th>
+          <th></th>
         </tr> 
       </thead>
       <tbody>

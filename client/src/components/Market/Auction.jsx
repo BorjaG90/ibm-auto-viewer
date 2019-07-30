@@ -25,6 +25,7 @@ class Auction extends PureComponent {
           .replace(" ago", " antes")
           .replace("in ","en ")
           .replace(" hour"," hora")
+          .replace(" an ", " una ")
           .replace(" a ", " un ")
           .replace(" day", " día")
         } 
@@ -33,6 +34,11 @@ class Auction extends PureComponent {
       <td>{auction.age}</td>
       <td>{auction.average }</td>
       <td>{nf.format(auction.offer)}</td>
+      <td>
+        <button className="btn waves-effect waves-ligh purple lighten-2">
+          Perfil
+        </button>
+      </td>
     </tr> 
   }
 }

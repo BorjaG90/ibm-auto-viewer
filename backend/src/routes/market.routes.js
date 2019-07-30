@@ -6,7 +6,7 @@ const Market = require('../models/auction.model');
 router.get('/', async (req, res) => {
 	const auctions = await Market.find()
 		.populate('player')
-		.sort({date_auction: 1})
+		.sort({average: -1,date_auction: 1})
 	res.json(auctions);
 });
 
