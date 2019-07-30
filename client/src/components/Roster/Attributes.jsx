@@ -5,10 +5,15 @@ import './style.css';
 
 class Attributes extends PureComponent {
   render(){
-    const { player, key } = this.props;
-    
-    
-    return <tr id={"attr_" + player._id} key={key + "_2"} style={{display: 'none'}}>
+    const { player, show } = this.props;
+
+    let showStyle
+    showStyle = show ? {} : { display: 'none'}
+
+    return <tr 
+      id={"attr_" + player._id} 
+      key={"attr_tr_" + player._id} 
+      style={showStyle}>
       <td colSpan="11" >
         <table className="responsive-table centered striped">
           <thead>
@@ -24,11 +29,11 @@ class Attributes extends PureComponent {
           <tbody>
             <tr>
               <td>{player.level}</td>
-              <td>{player.mental / 100}</td>
+              <td><b>{player.mental / 100}</b></td>
               <td>{player.physic / 100}</td>
               <td>{player.offense / 100}</td>
               <td>{player.defense / 100}</td>
-              <td>{player.total / 100}</td>
+              <td><b>{player.total / 100}</b></td>
             </tr>
           </tbody>
         </table>
@@ -38,8 +43,6 @@ class Attributes extends PureComponent {
 }
 
 // Validation
-Attributes.propTypes = {
-  player: PropTypes.object.isRequired
-}
+Attributes.propTypes = { player: PropTypes.object.isRequired }
 
 export default Attributes

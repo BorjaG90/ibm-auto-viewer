@@ -10,6 +10,7 @@ class Dashboard extends Component {
   componentDidMount() {
     this.forceUpdate()
   }
+  
   render(){
     return(
       <div className="dashboard">

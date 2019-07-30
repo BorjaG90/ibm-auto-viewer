@@ -6,30 +6,28 @@ import './style.css';
 
 class Auction extends PureComponent {
   render(){
-    const { auction, key } = this.props;
+    const { auction } = this.props;
 
     var nf = new Intl.NumberFormat('es-ES', 
       { style: 'currency', currency: 'EUR' }
     );
 
     let identificator;
-    if (auction.player !== null){
-      identificator = auction.player.name
-    } else {
-      identificator = auction._id
-    }
+    identificator = auction.player !== null ? auction.player.name : auction._id
 
-    return <tr key={key}>
+    return <tr key={auction._id}>
       <td>{identificator}</td>
       <td>{
         moment.utc(
           auction.date_auction
         ).format('HH:mm DD-MM-YYYY')}  
         {" / " + moment.utc(auction.date_auction).fromNow()
+          .replace(" ago", " antes")
           .replace("in ","en ")
           .replace(" hour"," hora")
-          .replace(" a", " un")
-          .replace(" day", " día")} 
+          .replace(" a ", " un ")
+          .replace(" day", " día")
+        } 
         </td>
       <td>{auction.position}</td>
       <td>{auction.age}</td>
@@ -40,8 +38,6 @@ class Auction extends PureComponent {
 }
 
 // Validation
-Auction.propTypes = {
-  auction: PropTypes.object.isRequired
-}
+Auction.propTypes = { auction: PropTypes.object.isRequired }
 
 export default Auction
