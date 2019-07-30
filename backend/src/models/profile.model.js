@@ -2,9 +2,9 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const ProfileSchema = new Schema({
-    id_user: { type: Number, required: true },
+    user_id: { type: mongoose.Schema.Types.ObjectId, required: true },
     username: { type: String, required: true },
-    id_team: { type: Number, required: true },
+    team_id: { type: mongoose.Schema.Types.ObjectId, required: true },
     team_name: { type: String, required: true },
     money: { type: Number, required: true },
     color_prim: { type: String, required: true },

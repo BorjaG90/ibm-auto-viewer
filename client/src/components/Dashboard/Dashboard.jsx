@@ -1,43 +1,34 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
+import { Route, Switch } from 'react-router-dom'
 
+
+import Menu from './Menu';
 import Roster from '../Roster/Roster'
+import Market from '../Market/Market';
 
-import './style.css';
-
-class Dashboard extends PureComponent {
-
-  render(){
-    
-    return <div>
-      <table>
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>País</th>
-            <th>Nombre</th>
-            <th>Pos.</th>
-            <th>Edad</th>
-            <th>Altura</th>
-            <th>Peso</th>
-            <th>Ficha</th>
-            <th>Años C.</th>
-            <th>Cláusula</th>
-            <th>Canon</th>
-          </tr> 
-        </thead>
-        <tbody>
-          <Roster 
-            id_tema={this.props.id_team}
-          />
-        </tbody>
-      </table> 
-    </div>
+class Dashboard extends Component {
+  componentDidMount() {
+    this.forceUpdate()
   }
-}
+  
+  render(){
+    return(
+      <div className="dashboard">
+        <Menu color_prim={this.props.color_prim} />
+        <Switch>
 
-// Validation
-Dashboard.propTypes = {
-  id_team: PropTypes.id_team.isRequired
+          <Route path="/roster" render={props => 
+            <Roster {...props} team_id={this.props.team_id} />
+          }/>
+
+          <Route path="/market" render={props => 
+            <Market />
+          }/>
+
+        </Switch>
+      </div>
+    )
+  }
 }
 
 export default Dashboard
