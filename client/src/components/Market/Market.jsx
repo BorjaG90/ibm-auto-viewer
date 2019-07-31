@@ -34,7 +34,7 @@ class Market extends PureComponent {
       </thead>
       <tbody>
         {this.state.market.map(auction =>
-          <Auction auction={auction} key={auction.id_player} />
+          <Auction auction={auction} key={auction._id}/>
         )}
       </tbody>
     </table>

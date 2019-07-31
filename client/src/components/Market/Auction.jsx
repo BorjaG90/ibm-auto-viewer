@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 import moment from 'moment'
+import { Link } from 'react-router-dom'
 
 import './style.css';
 
@@ -15,7 +16,7 @@ class Auction extends PureComponent {
     let identificator;
     identificator = auction.player !== null ? auction.player.name : auction._id
 
-    return <tr key={auction._id}>
+    return <tr>
       <td>{identificator}</td>
       <td>{
         moment.utc(
@@ -35,9 +36,11 @@ class Auction extends PureComponent {
       <td>{auction.average }</td>
       <td>{nf.format(auction.offer)}</td>
       <td>
-        <button className="btn waves-effect waves-ligh purple lighten-2">
-          Perfil
-        </button>
+        <Link to={`/players/${auction._id}`}>
+          <button className="btn waves-effect waves-ligh purple lighten-2">
+            Perfil
+          </button>
+        </Link>
       </td>
     </tr> 
   }

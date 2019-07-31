@@ -24,30 +24,28 @@ class Roster extends PureComponent {
   render(){
     return <div className="responsive-table centered striped">
       <div><h3>Plantilla Senior</h3></div>
-      <div className="row">
-        <table>
-          <thead>
-            <tr>
-              <th>Nombre</th>
-              <th>Pos.</th>
-              <th>Edad</th>
-              <th>Altura</th>
-              <th>Peso</th>
-              <th>Ficha</th>
-              <th>Años C.</th>
-              <th>Cláusula</th>
-              <th>Canon</th>
-              <th>País</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-          {this.state.senior_roster.map(player => 
-            <Player player={player} key={"player_" + player._id} />
-          )}
-          </tbody>
-        </table>
-      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Pos.</th>
+            <th>Edad</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Ficha</th>
+            <th>Años C.</th>
+            <th>Cláusula</th>
+            <th>Canon</th>
+            <th>País</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+        {this.state.senior_roster.map(player => 
+          <Player player={player} key={player._id} />
+        )}
+        </tbody>
+      </table>
     </div>
   }
 }

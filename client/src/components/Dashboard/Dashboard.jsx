@@ -24,9 +24,7 @@ class Dashboard extends Component {
             <Juniors {...props} team_id={this.props.team_id} />
           }/>
 
-          <Route path="/market" render={props => 
-            <Market />
-          }/>
+          <Route path="/market" render={props => <Market /> }/>
 
           <Route path="/players/:id" component={PlayerProfile}/>
 
