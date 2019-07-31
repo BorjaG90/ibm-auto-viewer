@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
 
-
-import Menu from './Menu';
 import Roster from '../Roster/Roster'
+import Juniors from '../Roster/Juniors'
 import Market from '../Market/Market';
+import PlayerProfile from '../Player_Profile/Profile'
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -14,16 +14,21 @@ class Dashboard extends Component {
   render(){
     return(
       <div className="dashboard">
-        <Menu color_prim={this.props.color_prim} />
         <Switch>
 
           <Route path="/roster" render={props => 
             <Roster {...props} team_id={this.props.team_id} />
           }/>
 
+          <Route path="/juniors" render={props => 
+            <Juniors {...props} team_id={this.props.team_id} />
+          }/>
+
           <Route path="/market" render={props => 
             <Market />
           }/>
+
+          <Route path="/players/:id" component={PlayerProfile}/>
 
         </Switch>
       </div>

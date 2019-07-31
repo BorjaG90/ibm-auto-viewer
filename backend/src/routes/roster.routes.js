@@ -10,4 +10,11 @@ router.get('/', async (req, res) => {
 	res.json(seniors);
 });
 
+router.get('/juniors', async (req, res) => {
+	const juniors = await Roster.find(
+		{team_id: req.header('team_id'), juvenil: true}
+	).sort({total: -1, age: 1})
+	res.json(juniors);
+});
+
 module.exports = router;

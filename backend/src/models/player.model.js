@@ -39,7 +39,7 @@ const PlayerSchema = new mongoose.Schema({
 	offense: { type: Number, required: true },
 	total: { type: Number, required: true },
 	progressions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Progression' }],
-	playerstats: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PlayerStat' }]
+	player_stats: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PlayerStat' }]
 });
 
 module.exports = mongoose.model('Player', PlayerSchema);

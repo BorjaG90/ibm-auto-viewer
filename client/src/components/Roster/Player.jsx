@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import Attributes from './Attributes'
 
@@ -36,9 +37,11 @@ class Player extends PureComponent {
         <td>{player.canon / 100} %</td>
         <td>{player.country}</td>
         <td>
-          <button className="btn waves-effect waves-ligh purple lighten-2">
-            Perfil
-          </button>
+          <Link to={`/players/${player._id}`}>
+            <button className="btn waves-effect waves-ligh purple lighten-2">
+              Perfil
+            </button>
+          </Link>
         </td>
       </tr>
       <Attributes 
