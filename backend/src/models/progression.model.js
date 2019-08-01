@@ -1,19 +1,10 @@
 const mongoose = require('mongoose');
 
-const PlayerSchema = new mongoose.Schema({
-	_id: { type: mongoose.Schema.Types.ObjectId, required: true },
-	team_id: { type: mongoose.Schema.Types.ObjectId },
-	name: { type: String, required: true },
-	position: { type: String, required: true },
-	age: { type: Number, required: true },
-	height: { type: Number, required: true },
-	weight: { type: Number, required: true },
-	canon: { type: Number, required: true },
-	salary: { type: Number, required: true },
-	clause: { type: Number, required: true },
-	years: { type: Number, required: true },
-	juvenil: { type: Boolean, required: true },
-	country: { type: String, required: true },
+const ProgressionSchema = new mongoose.Schema({
+  _id: { type: mongoose.Schema.Types.ObjectId, required: true },
+  /* player_id: { type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Player', 
+    required: true },*/
 	power: { type: Number, required: true },
 	ambition: { type: Number, required: true },
 	leadership: { type: Number, required: true },
@@ -38,8 +29,7 @@ const PlayerSchema = new mongoose.Schema({
 	defense: { type: Number, required: true },
 	offense: { type: Number, required: true },
 	total: { type: Number, required: true },
-	progressions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Progression' }],
-	player_stats: [{ type: mongoose.Schema.Types.ObjectId, ref: 'PlayerStat' }]
+	_date: { type: Date, required:true }
 });
 
-module.exports = mongoose.model('Player', PlayerSchema);
+module.exports = mongoose.model('Progression', ProgressionSchema);

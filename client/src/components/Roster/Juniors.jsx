@@ -5,25 +5,25 @@ import Player from './Player'
 
 import './style.css';
 
-class Roster extends PureComponent {
+class Juniors extends PureComponent {
 
-  state = { senior_roster: [] }
+  state = { junior_roster: [] }
 
   componentDidMount() {
-    fetch(`http://localhost:4000/api/roster/`, 
+    fetch(`http://localhost:4000/api/roster/juniors`, 
       {headers:{'team_id': this.props.team_id}}
     ) // Petición GET
 			.then(res => res.json())
 			.then(data => {
         console.log(data);
-        this.setState({senior_roster: data});
+        this.setState({junior_roster: data});
       })
       .catch(console.log(`ERROR: ${this.props.team_id}`))
   }
 
   render(){
     return <React.Fragment>
-      <h3 className="players-title">Plantilla Senior</h3>
+      <h3 className="players-title">Plantilla Junior</h3>
       <table className="responsive-table centered striped">
         <thead>
           <tr>
@@ -41,8 +41,8 @@ class Roster extends PureComponent {
           </tr>
         </thead>
         <tbody>
-        {this.state.senior_roster.map(player => 
-          <Player player={player} key={player._id} />
+        {this.state.junior_roster.map(player => 
+          <Player player={player} key={"player_" + player._id} />
         )}
         </tbody>
       </table>
@@ -51,6 +51,6 @@ class Roster extends PureComponent {
 }
 
 // Validation
-Roster.propTypes = { team_id: PropTypes.string.isRequired }
+Juniors.propTypes = { team_id: PropTypes.string.isRequired }
 
-export default Roster
+export default Juniors

@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
-import {Plantilla, Mercado} from './Links'
+import M from 'materialize-css';  
+
+import {Plantilla, Cantera, Mercado} from './Links'
 
 class Menu extends Component {
+  componentDidMount() {  
+    //let elems = document.querySelectorAll('.dropdown-trigger');
+    //M.Dropdown.init(elems, {inDuration: 300, outDuration: 225});
+    M.AutoInit();
+    console.log(M);
+  }
+
   render(){
     const { color_prim } = this.props;
     let navStyle = {
@@ -10,9 +19,27 @@ class Menu extends Component {
     return <nav style={navStyle}>
       <div className="nav-wrapper">
         <div className="nav-content">
-          <ul className="tabs tabs-transparent">
-            <li className="tab"><Plantilla/></li>
-            <li className="tab"><Mercado/></li>
+          <a href="#!" 
+            className='dropdown-button dropdown-trigger btn' 
+            data-activates='dropdown_roster'
+            data-target='dropdown_roster'
+          >Plantilla</a>
+          <ul id='dropdown_roster' className='dropdown-content'>
+            <li><Plantilla/></li>
+            <li><Cantera/></li>
+            <li className="divider"></li>
+            <li><a href="#!">three</a></li>
+          </ul>
+          <a href="#!" 
+            className='dropdown-button dropdown-trigger btn' 
+            data-activates='dropdown_market'
+            data-target='dropdown_market'
+          >Mercado</a>
+          <ul id='dropdown_market' className='dropdown-content'>
+            <li><Mercado/></li>
+            <li><a href="#!">two</a></li>
+            <li className="divider"></li>
+            <li><a href="#!">three</a></li>
           </ul>
         </div>
       </div>

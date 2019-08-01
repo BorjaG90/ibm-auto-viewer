@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import Attributes from './Attributes'
 
@@ -23,22 +24,23 @@ class Player extends PureComponent {
 
     return <React.Fragment>
       <tr id={"play_" + player._id} 
-        key={"play_tr_" + player._id} 
         onClick={this.showAttributes.bind(this)}>
         <td>{player.name}</td>
         <td>{player.position}</td>
         <td>{player.age}</td>
         <td>{player.heigth / 100} m.</td>
         <td>{player.weight} Kg.</td>
-        <td>{nf.format(player.salary)} </td>
+        <td>{nf.format(player.salary)}</td>
         <td>{player.years}</td>
         <td>{nf.format(player.clause)}</td>
         <td>{player.canon / 100} %</td>
         <td>{player.country}</td>
         <td>
-          <button className="btn waves-effect waves-ligh purple lighten-2">
-            Perfil
-          </button>
+          <Link to={`/players/${player._id}`}>
+            <button className="btn waves-effect waves-ligh purple lighten-2">
+              Perfil
+            </button>
+          </Link>
         </td>
       </tr>
       <Attributes 
