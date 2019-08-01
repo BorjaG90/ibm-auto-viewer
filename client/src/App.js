@@ -6,6 +6,8 @@ import Menu from './components/Dashboard/Menu'
 import Banner from './components/Dashboard/Banner';
 import Dashboard from './components/Dashboard/Dashboard';
 
+import './App.css';
+
 
 class App extends Component {
 
@@ -54,8 +56,10 @@ class App extends Component {
         />
 
         <Menu color_prim={this.state.profile.color_prim} />
-      
-        {dashboard}
+
+        <div className="App">
+          {dashboard}
+        </div>
 
       </Router>
     )
