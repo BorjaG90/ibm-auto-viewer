@@ -45,21 +45,18 @@ class App extends Component {
 
     return (
       <Router>
-        <div className="container">
-          <Banner 
-            username={this.state.profile.username}
-            teamname={this.state.profile.team_name}
-            money={this.state.profile.money}
-            color_prim={this.state.profile.color_prim}
-            color_sec={this.state.profile.color_sec}
-          />
+        <Banner 
+          username={this.state.profile.username}
+          teamname={this.state.profile.team_name}
+          money={this.state.profile.money}
+          color_prim={this.state.profile.color_prim}
+          color_sec={this.state.profile.color_sec}
+        />
 
-          
-          <Menu color_prim={this.state.profile.color_prim} />
-        
-          {dashboard}
-          
-        </div>
+        <Menu color_prim={this.state.profile.color_prim} />
+      
+        {dashboard}
+
       </Router>
     )
   }

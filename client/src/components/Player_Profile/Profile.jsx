@@ -30,17 +30,55 @@ class Profile extends PureComponent {
   render(){
     const { player, progressions, stats } = this.state;
 
+    // Graph
+    let graphData = {
+      labels: ['Total', 'Mental', 'Ataque', 'Defensa', 'Físico'],
+      datasets: [
+        {
+          fontColor: "white",
+          label:"Medias del Jugador",
+          backgroundColor: "rgba(200,50,200,0.3)",
+          pointBackgroundColor: "rgba(200,50,200,1)",
+          hoverPointBackgroundColor: "#fff",
+          pointHighlightStroke: "rgba(200,50,200,1)",
+          data: [
+            player.total / 100,
+            player.mental / 100,
+            player.offense / 100,
+            player.defense / 100,
+            player.physic / 100
+          ]
+        }
+      ]
+    }
+
+    let options = {
+      responsive: true,
+      aspectRatio: 1,
+      maintainAspectRatio: true,
+      legend: { position: 'bottom' },
+      title: { display: false, text: 'Media del jugador' },
+      scale: {
+        reverse: false,
+        gridLines: {
+          color: ['black', 'black', 'black', 'red', 'red', 
+            'orange', 'yellow', 'limegreen', 'blue', 'violet' ]
+        },
+        ticks: { beginAtZero: true, stepSize: 10 }
+      }
+    }
+
+    // Progression
     let isProgression;
     if(progressions !== undefined && progressions.length > 0){
       isProgression = <Progression progressions={progressions} />
     }else{ isProgression = <br/> }
 
+    // Stats
     let isStats;
     if(stats !== undefined && stats.length >0){
       isStats = <Stats stats={stats} />
     }else{ isStats = <br/> }
-
-    
 
     return <div className="profile-container">
       <div className="row data">
@@ -48,7 +86,7 @@ class Profile extends PureComponent {
           <ProfileData player={player} />
         </div>
         <div className="col s6 data-graph">
-          <Graph />
+          <Graph data={graphData} options={options} />
         </div>
       </div>
 

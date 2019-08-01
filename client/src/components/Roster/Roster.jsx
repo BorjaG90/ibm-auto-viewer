@@ -22,9 +22,9 @@ class Roster extends PureComponent {
   }
 
   render(){
-    return <div className="responsive-table centered striped">
-      <div><h3>Plantilla Senior</h3></div>
-      <table>
+    return <React.Fragment>
+      <h3 className="players-title">Plantilla Senior</h3>
+      <table className="responsive-table centered striped">
         <thead>
           <tr>
             <th>Nombre</th>
@@ -46,7 +46,7 @@ class Roster extends PureComponent {
         )}
         </tbody>
       </table>
-    </div>
+    </React.Fragment>
   }
 }
 

@@ -13,9 +13,9 @@ class ProfileData extends PureComponent {
       { style: 'currency', currency: 'EUR' }
     );
 
-    return <div className="card blue-grey darken-1">
+    return <div className="card teal lighten-2">
       <div className="card-content white-text">
-        <h2>{player.name} </h2>
+        <h2 className="profile-card-title">{player.name} </h2>
         <h4><b>{player.position}</b> {isJuvenil} - 
           <i> {player.age}</i> años - {player.country}</h4>
         <h4>Características:</h4>
@@ -23,7 +23,7 @@ class ProfileData extends PureComponent {
           <b> {player.weight}</b> Kg.</p>
         <h4>Contrato:</h4>
         <p>Ficha: <b>{nf.format(player.salary)}</b> por año 
-          durante {player.years} año/s</p>
+          durante <b>{player.years}</b> año/s</p>
         <p>Cláusula: <b>{nf.format(player.clause)}</b> - Cánon: 
           <i> {player.canon / 100}</i>%</p>
       </div>

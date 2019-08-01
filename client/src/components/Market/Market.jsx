@@ -20,24 +20,27 @@ class Market extends PureComponent {
   }
 
   render(){
-    return <table className="responsive-table centered striped">
-      <thead>
-        <tr>
-          <th>Nombre / ID</th>
-          <th>Fecha</th>
-          <th>Posicion</th>
-          <th>Edad</th>
-          <th>Media</th>
-          <th>Puja</th>
-          <th></th>
-        </tr> 
-      </thead>
-      <tbody>
-        {this.state.market.map(auction =>
-          <Auction auction={auction} key={auction._id}/>
-        )}
-      </tbody>
-    </table>
+    return <React.Fragment>
+      <h3 className="market-title">Mercado</h3>
+      <table className="responsive-table centered striped">
+        <thead>
+          <tr>
+            <th>Nombre / ID</th>
+            <th>Fecha</th>
+            <th>Posicion</th>
+            <th>Edad</th>
+            <th>Media</th>
+            <th>Puja</th>
+            <th></th>
+          </tr> 
+        </thead>
+        <tbody>
+          {this.state.market.map(auction =>
+            <Auction auction={auction} key={auction._id}/>
+          )}
+        </tbody>
+      </table>
+    </React.Fragment>
   }
 }
 

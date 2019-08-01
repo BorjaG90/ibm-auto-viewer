@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/BorjaG90/ibm-auto-viewer#readme",
   "dependencies": {
-    "concurrently": "^4.1.1"
+    "chart.js": "^2.8.0",
+    "concurrently": "^4.1.1",
+    "react-chartjs-2": "^2.7.6"
   }
 }
