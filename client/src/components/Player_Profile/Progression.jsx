@@ -16,7 +16,7 @@ class Progression extends PureComponent {
             <th colSpan="5">Ataque</th>
             <th colSpan="4">Defensa</th>
             <th colSpan="3">Físico</th>
-            <th colSpan="4">Nivel</th>
+            <th colSpan="5">Nivel</th>
             <th colSpan="5">Media</th>
           </tr>
           <tr>
@@ -24,7 +24,7 @@ class Progression extends PureComponent {
             <th>T2</th><th>T3</th><th>TL</th><th>Mate</th><th>Pase</th>
             <th>Rebote</th><th>Robo</th><th>Tapón</th><th>Marcaje</th>
             <th>Velocidad</th><th>Resistencia</th><th>Lucha</th>
-            <th>Liderazgo</th><th>Ambición</th><th>Nivel</th><th>Exp.</th>
+            <th>Liderazgo</th><th>Lealtad</th><th>Ambición</th><th>Nivel</th><th>Exp.</th>
             <th>Ataque</th><th>Defensa</th><th>Físico</th><th>Mental</th>
             <th>Total</th>
           </tr>
@@ -48,6 +48,7 @@ class Progression extends PureComponent {
             <td>{prog.endurance}</td>
             <td>{prog.fight}</td>
             <td>{prog.leadership}</td>
+            <td>{prog.loyalty ? prog.loyalty  : ""}</td>
             <td>{prog.ambition}</td>
             <td>{prog.level}</td>
             <td>{prog.exp}</td>
