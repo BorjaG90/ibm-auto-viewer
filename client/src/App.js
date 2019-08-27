@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
-import M from 'materialize-css';  
 
-import Menu from './components/Dashboard/Menu'
-import Banner from './components/Dashboard/Banner';
 import Dashboard from './components/Dashboard/Dashboard';
+import Banner from './components/Dashboard/Banner'
 
 import './App.css';
 
@@ -17,8 +15,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    M.AutoInit();
-    //console.log(M);
     this.fetchProfile();
   }
   
@@ -47,19 +43,20 @@ class App extends Component {
 
     return (
       <Router>
-        <Banner 
-          username={this.state.profile.username}
-          teamname={this.state.profile.team_name}
-          money={this.state.profile.money}
-          color_prim={this.state.profile.color_prim}
-          color_sec={this.state.profile.color_sec}
-        />
-
-        <Menu color_prim={this.state.profile.color_prim} />
-
         <div className="App">
           <div className="container">
-            {dashboard}
+            <Banner username={this.state.profile.username}
+              teamname={this.state.profile.team_name}
+              money={this.state.profile.money}
+              color_prim={this.state.profile.color_prim}
+              color_sec={this.state.profile.color_sec}
+            />
+            <div className="row">
+              <div className="col-md-2">Menu</div>
+              <div className="col-md-10">
+                {dashboard}
+              </div>
+            </div>
           </div>
         </div>
 

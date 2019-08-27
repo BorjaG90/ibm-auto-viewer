@@ -18,25 +18,23 @@ class Banner extends PureComponent {
     };
 
     return (
-      <nav style={navStyle}>
-        <div className="nav-wrapper">
+      <React.Fragment>
 
-          <a href="/" className="center brand-logo" style={titleStyle}>
+        <nav className="navbar bg-dark navbar-fixed-top" style={navStyle}>
+          <h1><a href="/" className="" style={titleStyle}>
             IBM Auto Manager
-          </a>
+          </a></h1>
+        </nav>
 
-          <a href="/" data-target="mobile-demo" className="sidenav-trigger">
-            <i className="material-icons">menu</i>
-          </a>
-          
-          <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li className="info">{username}</li>
-            <li className="info info-team" style={titleStyle}>{teamname}</li>
-            <li className="info">{nf.format(money)}</li>
-          </ul>
-        </div>
-      </nav>
-  
+        <nav className="navbar bg-dark navbar-fixed-top">
+          <div class="navbar-expand-lg navbar-right" id="navbarSupportedContent">
+            <a href="#!"> {username} </a>
+            <a href="#!"> {teamname} </a>
+            <a href="#!"> {nf.format(money)} </a>
+          </div>
+        </nav>
+
+      </React.Fragment>
     )
   }
 }
