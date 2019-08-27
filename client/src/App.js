@@ -58,7 +58,9 @@ class App extends Component {
         <Menu color_prim={this.state.profile.color_prim} />
 
         <div className="App">
-          {dashboard}
+          <div className="container">
+            {dashboard}
+          </div>
         </div>
 
       </Router>

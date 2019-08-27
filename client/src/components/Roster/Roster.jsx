@@ -7,7 +7,7 @@ import './style.css';
 
 class Roster extends PureComponent {
 
-  state = { senior_roster: [] }
+  state = { senior_roster: [], players: [] }
 
   componentDidMount() {
     fetch(`http://localhost:4000/api/roster/`, 
@@ -16,7 +16,7 @@ class Roster extends PureComponent {
 			.then(res => res.json())
 			.then(data => {
         console.log(data);
-        this.setState({senior_roster: data});
+        this.setState({senior_roster: data, players: data.seniors});
       })
       .catch(console.log(`ERROR: ${this.props.team_id}`))
   }
@@ -41,7 +41,7 @@ class Roster extends PureComponent {
           </tr>
         </thead>
         <tbody>
-        {this.state.senior_roster.map(player => 
+        {this.state.players.map(player => 
           <Player player={player} key={player._id} />
         )}
         </tbody>
