@@ -17,6 +17,7 @@ const PlayerSchema = new mongoose.Schema({
 	power: { type: Number, required: true },
 	ambition: { type: Number, required: true },
 	leadership: { type: Number, required: true },
+	loyalty: { type: Number },
 	exp: { type: Number, required: true },
 	speed: { type: Number, required: true },
 	jump: { type: Number, required: true },

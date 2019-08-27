@@ -23,7 +23,7 @@ class Menu extends Component {
             className='dropdown-button dropdown-trigger btn' 
             data-activates='dropdown_roster'
             data-target='dropdown_roster'
-          >Plantilla</a>
+          >Entrenador</a>
           <ul id='dropdown_roster' className='dropdown-content'>
             <li><Plantilla/></li>
             <li><Cantera/></li>
@@ -34,11 +34,11 @@ class Menu extends Component {
             className='dropdown-button dropdown-trigger btn' 
             data-activates='dropdown_market'
             data-target='dropdown_market'
-          >Mercado</a>
+          >Secretario Técnico</a>
           <ul id='dropdown_market' className='dropdown-content'>
             <li><Mercado/></li>
-            <li><a href="#!">two</a></li>
             <li className="divider"></li>
+            <li><a href="#!">Jugadores</a></li>
             <li><a href="#!">three</a></li>
           </ul>
         </div>

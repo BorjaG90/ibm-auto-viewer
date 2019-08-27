@@ -13,11 +13,17 @@ class Auction extends PureComponent {
       { style: 'currency', currency: 'EUR' }
     );
 
-    let identificator;
-    identificator = auction.player !== null ? auction.player.name : auction._id
+    let nombre;
+    nombre = auction.player !== null ? auction.player.name : auction._id
+    let identificador;
+    identificador = auction.player !== null ? <Link to={`/players/${auction.player._id}`}>
+    <button className="btn waves-effect waves-ligh purple lighten-2">
+      Perfil
+    </button>
+  </Link> : null
 
     return <tr>
-      <td>{identificator}</td>
+      <td>{nombre}</td>
       <td>{
         moment.utc(
           auction.date_auction
@@ -35,13 +41,7 @@ class Auction extends PureComponent {
       <td>{auction.age}</td>
       <td>{auction.average }</td>
       <td>{nf.format(auction.offer)}</td>
-      <td>
-        <Link to={`/players/${auction._id}`}>
-          <button className="btn waves-effect waves-ligh purple lighten-2">
-            Perfil
-          </button>
-        </Link>
-      </td>
+      <td>{identificador}</td>
     </tr> 
   }
 }

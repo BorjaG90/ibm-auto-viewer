@@ -14,14 +14,14 @@ class Attributes extends PureComponent {
             <th colSpan="5">Ataque</th>
             <th colSpan="4">Defensa</th>
             <th colSpan="3">Físico</th>
-            <th colSpan="4">Nivel</th>
+            <th colSpan="5">Nivel</th>
             <th colSpan="5">Media</th>
           </tr>
           <tr>
             <th>T2</th><th>T3</th><th>TL</th><th>Mate</th><th>Pase</th>
             <th>Rebote</th><th>Robo</th><th>Tapón</th><th>Marcaje</th>
             <th>Velocidad</th><th>Resistencia</th><th>Lucha</th>
-            <th>Liderazgo</th><th>Ambición</th><th>Nivel</th><th>Exp.</th>
+            <th>Liderazgo</th><th>Lealtad</th><th>Ambición</th><th>Nivel</th><th>Exp.</th>
             <th>Ataque</th><th>Defensa</th><th>Físico</th><th>Mental</th>
             <th>Total</th>
           </tr>
@@ -41,6 +41,7 @@ class Attributes extends PureComponent {
             <td>{player.endurance}</td>
             <td>{player.fight}</td>
             <td>{player.leadership}</td>
+            <td>{player.loyalty ? player.loyalty  : ""}</td>
             <td>{player.ambition}</td>
             <td>{player.level}</td>
             <td>{player.exp}</td>

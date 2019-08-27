@@ -41,7 +41,7 @@ class Juniors extends PureComponent {
           </tr>
         </thead>
         <tbody>
-        {this.state.junior_roster.map(player => 
+        {this.state.junior_roster.juniors.map(player => 
           <Player player={player} key={"player_" + player._id} />
         )}
         </tbody>

@@ -9,6 +9,7 @@ import PlayerProfile from '../Player_Profile/Profile'
 class Dashboard extends Component {
   componentDidMount() {
     this.forceUpdate()
+    console.log(this.props.team_id)
   }
   
   render(){
