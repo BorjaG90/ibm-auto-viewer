@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom'
+import PropTypes from 'prop-types'
+
+import Container from '../Team_Info/Container';
 
 
 class Dashboard extends Component {
@@ -12,13 +15,17 @@ class Dashboard extends Component {
     return(
       <div className="dashboard">
         <Switch>
-
-          Roster
+          <Route path="/team_info" render={props => 
+            <Container {...props} team_id={this.props.team_id} />
+          }/>
 
         </Switch>
       </div>
     )
   }
 }
+
+// Validation
+Dashboard.propTypes = { team_id: PropTypes.string.isRequired }
 
 export default Dashboard

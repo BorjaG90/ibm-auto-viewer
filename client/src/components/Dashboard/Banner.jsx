@@ -27,7 +27,8 @@ class Banner extends PureComponent {
         </nav>
 
         <nav className="navbar bg-dark navbar-fixed-top">
-          <div class="navbar-expand-lg navbar-right" id="navbarSupportedContent">
+          <div></div>
+          <div className="navbar-expand-lg navbar-right">
             <a href="#!"> {username} </a>
             <a href="#!"> {teamname} </a>
             <a href="#!"> {nf.format(money)} </a>

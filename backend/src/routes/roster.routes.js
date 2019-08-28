@@ -10,18 +10,11 @@ const Roster = require('../models/team.model');
 // 	res.json(seniors);
 // });
 
-router.get('/', async (req, res) => {
-	const seniors = await Roster.find( {_id: req.header('team_id')} )
-		.populate('seniors')
-		.sort({total: -1, age: 1})
-	res.json(seniors);
+router.get('/:id', async (req, res) => {
+	const team = await Roster.findById(req.params.id)
+		.populate('seniors').populate('juniors')
+	res.json(team);
 });
 
-router.get('/juniors', async (req, res) => {
-	const juniors = await Roster.find( {_id: req.header('team_id')} )
-		.populate('juniors')
-		.sort({total: -1, age: 1})
-	res.json(juniors);
-});
 
 module.exports = router;

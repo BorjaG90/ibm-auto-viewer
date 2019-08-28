@@ -3,6 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 
 import Dashboard from './components/Dashboard/Dashboard';
 import Banner from './components/Dashboard/Banner'
+import Menu from './components/Dashboard/Menu'
 
 import './App.css';
 
@@ -31,12 +32,12 @@ class App extends Component {
   render() {
     let dashboard
     if(this.state.isLoading) {
-      console.log("SPINNER");
+      console.log("SPINNER App");
       dashboard = null // or you can render loading spinner here
     } else {
-      console.log("CARGADO");
+      console.log("CARGADO App");
       dashboard = <Dashboard 
-        team_id={this.state.profile.team_id}
+        team_id={this.state.profile.team_id._id}
         color_prim={this.state.profile.color_prim}
       />
     }
@@ -44,20 +45,18 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <div className="container">
             <Banner username={this.state.profile.username}
               teamname={this.state.profile.team_name}
               money={this.state.profile.money}
               color_prim={this.state.profile.color_prim}
               color_sec={this.state.profile.color_sec}
             />
-            <div className="row">
-              <div className="col-md-2">Menu</div>
+            <div className="row full-container">
+              <div className="col-md-2"><Menu/></div>
               <div className="col-md-10">
                 {dashboard}
               </div>
             </div>
-          </div>
         </div>
 
       </Router>
