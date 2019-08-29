@@ -10,13 +10,13 @@ class Progression extends PureComponent {
 
     return <div className="col s12 progression">
       <h3>Progresión</h3>
-      <table className="responsive-table centered striped">
-        <thead>
+      <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
             <th colSpan="5">Ataque</th>
             <th colSpan="4">Defensa</th>
             <th colSpan="3">Físico</th>
-            <th colSpan="5">Nivel</th>
+            <th colSpan="6">Nivel</th>
             <th colSpan="5">Media</th>
           </tr>
           <tr>

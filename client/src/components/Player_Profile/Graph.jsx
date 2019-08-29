@@ -8,10 +8,9 @@ class Graph extends Component {
   render(){
     const { data, options } = this.props;
 
-    return <div className="card blue lighten-4">
-      <div className="card-content">
+    return <div className="card">
+      <div className="card-body">
         <Radar data={data} options={options}/>
-        <h4 className="profile-card-title">Media del jugador</h4>
       </div>
     </div>
   }

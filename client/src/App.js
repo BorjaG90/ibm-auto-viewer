@@ -33,7 +33,9 @@ class App extends Component {
     let dashboard
     if(this.state.isLoading) {
       console.log("SPINNER App");
-      dashboard = null // or you can render loading spinner here
+      dashboard = <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
     } else {
       console.log("CARGADO App");
       dashboard = <Dashboard 
@@ -52,8 +54,8 @@ class App extends Component {
               color_sec={this.state.profile.color_sec}
             />
             <div className="row full-container">
-              <div className="col-md-2"><Menu/></div>
-              <div className="col-md-10">
+              <div className="col-md-1"><Menu/></div>
+              <div className="col-md-11">
                 {dashboard}
               </div>
             </div>

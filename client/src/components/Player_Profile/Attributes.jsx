@@ -6,10 +6,10 @@ import './style.css';
 class Attributes extends PureComponent {
   render(){
     const { player } = this.props;
-    return <div className="row attributes">
+    return <div className="col-md-12">
       <h3>Atributos</h3>
-      <table className="responsive-table centered striped">
-        <thead>
+      <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
             <th colSpan="5">Ataque</th>
             <th colSpan="4">Defensa</th>

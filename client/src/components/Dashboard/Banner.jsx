@@ -11,27 +11,29 @@ class Banner extends PureComponent {
     );
 
     let navStyle = {
-      backgroundColor: color_prim
+      backgroundColor: color_prim,
+      color: "white"
     };
     let titleStyle = {
-      color: color_sec
+      backgroundColor: color_sec,
+      color: "white"
     };
 
     return (
       <React.Fragment>
 
-        <nav className="navbar bg-dark navbar-fixed-top" style={navStyle}>
-          <h1><a href="/" className="" style={titleStyle}>
+        <nav className="navbar navbar-fixed-top" style={navStyle}>
+          <h1><a href="/" style={navStyle}>
             IBM Auto Manager
           </a></h1>
         </nav>
 
-        <nav className="navbar bg-dark navbar-fixed-top">
+        <nav className="navbar navbar-fixed-top" style={titleStyle}>
           <div></div>
           <div className="navbar-expand-lg navbar-right">
-            <a href="#!"> {username} </a>
-            <a href="#!"> {teamname} </a>
-            <a href="#!"> {nf.format(money)} </a>
+            <a href="#!" style={titleStyle}> {username} </a>
+            <a href="#!" style={titleStyle}> {teamname} </a>
+            <a href="#!" style={titleStyle}> {nf.format(money)} </a>
           </div>
         </nav>
 

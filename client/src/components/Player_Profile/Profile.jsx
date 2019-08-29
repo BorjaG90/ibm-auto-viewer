@@ -82,10 +82,10 @@ class Profile extends PureComponent {
 
     return <div className="profile-container">
       <div className="row data">
-        <div className="col s6 data-text">
+        <div className="col-md-6 data-text">
           <ProfileData player={player} />
         </div>
-        <div className="col s6 data-graph">
+        <div className="col-md-6 data-graph">
           <Graph data={graphData} options={options} />
         </div>
       </div>

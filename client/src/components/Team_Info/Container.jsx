@@ -26,8 +26,14 @@ class Container extends PureComponent {
       players_html =
         <React.Fragment>
           <h2><Plantilla/></h2>
+          <div class="spinner-border text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
           <h2><Cantera/></h2>
-        </React.Fragment> // or you can render loading spinner here
+          <div class="spinner-border text-secondary" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </React.Fragment>
     } else {
       console.log("CARGADO Container");
       players_html = <React.Fragment>
@@ -41,6 +47,12 @@ class Container extends PureComponent {
     return (
       <div>
         <h1>Resumen del equipo {this.state.team_info.name}</h1>
+        <h3>
+          División:{this.state.team_info.division} / Grupo: 
+          {this.state.team_info.group} - Clasificación: 
+          {this.state.team_info.clasification} - Racha: 
+          {this.state.team_info.streak}
+        </h3>
         {players_html}
       </div>
     )

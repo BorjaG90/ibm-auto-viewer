@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
-import Container from '../Team_Info/Container';
+import Container from '../Team_Info/Container'
+import PlayerProfile from '../Player_Profile/Profile'
 
 
 class Dashboard extends Component {
@@ -18,6 +19,9 @@ class Dashboard extends Component {
           <Route path="/team_info" render={props => 
             <Container {...props} team_id={this.props.team_id} />
           }/>
+
+          
+        <Route path="/players/:id" component={PlayerProfile}/>
 
         </Switch>
       </div>
