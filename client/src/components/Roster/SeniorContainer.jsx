@@ -16,6 +16,7 @@ class SeniorContainer extends PureComponent {
     .then(res => res.json())
     .then(data => {
       console.log(data);
+      console.log(this.props.type)
       this.setState({team_info: data, players: data.seniors, isLoading: false});
       this.forceUpdate();
     })
@@ -41,7 +42,7 @@ class SeniorContainer extends PureComponent {
         <Finances players={this.state.players}/>
     }
     return ( <React.Fragment>
-        <h1>Plantilla de {this.state.team_info.name}</h1>
+        <h1>Plantilla Senior de {this.state.team_info.name}</h1>
         <h3>Atributos</h3>
           {features_html}
         <h3>Financiero</h3>

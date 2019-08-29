@@ -7,7 +7,7 @@ import Finances from './Finances'
 import './style.css';
 
 
-class SeniorContainer extends PureComponent {
+class JuniorContainer extends PureComponent {
 
   state = { team_info: {}, players: [] , isLoading: true}
 
@@ -41,7 +41,7 @@ class SeniorContainer extends PureComponent {
         <Finances players={this.state.players}/>
     }
     return ( <React.Fragment>
-        <h1>Plantilla de {this.state.team_info.name}</h1>
+        <h1>Plantilla Junior de {this.state.team_info.name}</h1>
         <h3>Atributos</h3>
           {features_html}
         <h3>Financiero</h3>
@@ -53,6 +53,6 @@ class SeniorContainer extends PureComponent {
 }
 
 // Validation
-SeniorContainer.propTypes = { team_id: PropTypes.string.isRequired }
+JuniorContainer.propTypes = { team_id: PropTypes.string.isRequired }
 
-export default SeniorContainer
+export default JuniorContainer

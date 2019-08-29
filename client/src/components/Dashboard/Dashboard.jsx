@@ -6,6 +6,7 @@ import Container from '../Team_Info/Container'
 import PlayerProfile from '../Player_Profile/Profile'
 import SeniorRoster from '../Roster/SeniorContainer'
 import JuniorRoster from '../Roster/JuniorContainer'
+import Market from '../Market/Container'
 
 
 class Dashboard extends Component {
@@ -29,6 +30,8 @@ class Dashboard extends Component {
           <Route path="/juniors" render={props => 
             <JuniorRoster {...props} team_id={this.props.team_id} />
           }/>
+
+          <Route path="/market" component={Market}/>
           
           <Route path="/players/:id" component={PlayerProfile}/>
 

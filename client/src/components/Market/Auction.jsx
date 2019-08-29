@@ -14,13 +14,9 @@ class Auction extends PureComponent {
     );
 
     let nombre;
-    nombre = auction.player !== null ? auction.player.name : auction._id
-    let identificador;
-    identificador = auction.player !== null ? <Link to={`/players/${auction.player._id}`}>
-    <button className="btn waves-effect waves-ligh purple lighten-2">
-      Perfil
-    </button>
-  </Link> : null
+    nombre = auction.player !== null ? <Link to={`/players/${auction.player._id}`}>
+    <button className="btn btn-info btn-block btn-sm">{auction.player.name}</button>
+    </Link> : auction._id
 
     return <tr>
       <td>{nombre}</td>
@@ -36,12 +32,11 @@ class Auction extends PureComponent {
           .replace(" a ", " un ")
           .replace(" day", " día")
         } 
-        </td>
+      </td>
       <td>{auction.position}</td>
       <td>{auction.age}</td>
       <td>{auction.average }</td>
       <td>{nf.format(auction.offer)}</td>
-      <td>{identificador}</td>
     </tr> 
   }
 }

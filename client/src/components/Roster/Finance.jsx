@@ -22,7 +22,13 @@ class Finance extends PureComponent {
 
     return <React.Fragment>
       <tr id={"play_" + player._id}>
-        <td><b>{player.name}</b></td>
+      <td>
+          <Link to={`/players/${player._id}`}>
+            <button className="btn btn-secondary btn-sm btn-block">
+            {player.name}
+            </button>
+          </Link>
+        </td>
         <td>{player.position}</td>
         <td>{player.age}</td>
         <td><b>{player.total / 100}</b></td>
