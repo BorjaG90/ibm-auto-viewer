@@ -6,7 +6,7 @@ import Players from './Players';
 import {Plantilla, Cantera} from '../Dashboard/Links'
 
 class Container extends PureComponent {
-  state = { team_info: [], isLoading: true}
+  state = { team_info: {}, isLoading: true}
 
   componentDidMount() {
     fetch(`http://localhost:4000/api/roster/${this.props.team_id}`) // Petición GET
@@ -45,7 +45,7 @@ class Container extends PureComponent {
     }
 
     return (
-      <div>
+      <React.Fragment>
         <h1>Resumen del equipo {this.state.team_info.name}</h1>
         <h3>
           División:{this.state.team_info.division} / Grupo: 
@@ -54,7 +54,7 @@ class Container extends PureComponent {
           {this.state.team_info.streak}
         </h3>
         {players_html}
-      </div>
+      </React.Fragment>
     )
   }
 }

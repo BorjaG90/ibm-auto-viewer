@@ -75,7 +75,7 @@ class ProfileData extends PureComponent {
               <tbody>
                 <tr>
                   <th scope="row">Ficha</th>
-                  <td>{nf.format(player.salary)} por año</td>
+                  <td>{nf.format(player.salary)}</td>
                 </tr>
                 <tr>
                   <th scope="row">Años</th>
