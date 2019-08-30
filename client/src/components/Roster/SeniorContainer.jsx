@@ -27,12 +27,12 @@ class SeniorContainer extends PureComponent {
     if(this.state.isLoading) {
       console.log("SPINNER Container");
       features_html =
-        <div class="spinner-border text-secondary" role="status">
-          <span class="sr-only">Loading...</span>
+        <div className="spinner-border text-secondary" role="status">
+          <span className="sr-only">Loading...</span>
         </div>
       finances_html =
-      <div class="spinner-border text-secondary" role="status">
-        <span class="sr-only">Loading...</span>
+      <div className="spinner-border text-secondary" role="status">
+        <span className="sr-only">Loading...</span>
       </div>
     } else {
       console.log("CARGADO Container");
