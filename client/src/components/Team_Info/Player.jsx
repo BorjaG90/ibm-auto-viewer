@@ -2,8 +2,6 @@ import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import Attributes from './Attributes'
-
 import './style.css';
 
 class Player extends PureComponent {
@@ -25,28 +23,23 @@ class Player extends PureComponent {
     return <React.Fragment>
       <tr id={"play_" + player._id} 
         onClick={this.showAttributes.bind(this)}>
+        <td>{player.country}</td>
         <td>{player.name}</td>
         <td>{player.position}</td>
-        <td>{player.age}</td>
-        <td>{player.heigth / 100} m.</td>
-        <td>{player.weight} Kg.</td>
+        <td><i>{player.age}</i></td>
+        <td><b>{player.total/ 100}</b></td>
+        <td><b><i>{player.mental/ 100}</i></b></td>
+        <td>{nf.format(player.clause)}</td>
         <td>{nf.format(player.salary)}</td>
         <td>{player.years}</td>
-        <td>{nf.format(player.clause)}</td>
-        <td>{player.canon / 100} %</td>
-        <td>{player.country}</td>
         <td>
           <Link to={`/players/${player._id}`}>
-            <button className="btn waves-effect waves-ligh purple lighten-2">
+            <button className="btn btn-secondary btn-sm btn-block">
               Perfil
             </button>
           </Link>
         </td>
       </tr>
-      <Attributes 
-        player={player} 
-        show={this.state.isShown} 
-        key={"attribute_" + player._id} />
     </React.Fragment>
   }
 }

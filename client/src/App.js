@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom'
-import M from 'materialize-css';  
 
-import Menu from './components/Dashboard/Menu'
-import Banner from './components/Dashboard/Banner';
 import Dashboard from './components/Dashboard/Dashboard';
+import Banner from './components/Dashboard/Banner'
+import Menu from './components/Dashboard/Menu'
 
 import './App.css';
 
@@ -17,8 +16,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    M.AutoInit();
-    //console.log(M);
     this.fetchProfile();
   }
   
@@ -35,32 +32,33 @@ class App extends Component {
   render() {
     let dashboard
     if(this.state.isLoading) {
-      console.log("SPINNER");
-      dashboard = null // or you can render loading spinner here
+      console.log("SPINNER App");
+      dashboard = <div className="spinner-border text-secondary" role="status">
+        <span className="sr-only">Loading...</span>
+      </div>
     } else {
-      console.log("CARGADO");
+      console.log("CARGADO App");
       dashboard = <Dashboard 
-        team_id={this.state.profile.team_id}
+        team_id={this.state.profile.team_id._id}
         color_prim={this.state.profile.color_prim}
       />
     }
 
     return (
       <Router>
-        <Banner 
-          username={this.state.profile.username}
-          teamname={this.state.profile.team_name}
-          money={this.state.profile.money}
-          color_prim={this.state.profile.color_prim}
-          color_sec={this.state.profile.color_sec}
-        />
-
-        <Menu color_prim={this.state.profile.color_prim} />
-
         <div className="App">
-          <div className="container">
-            {dashboard}
-          </div>
+            <Banner username={this.state.profile.username}
+              teamname={this.state.profile.team_name}
+              money={this.state.profile.money}
+              color_prim={this.state.profile.color_prim}
+              color_sec={this.state.profile.color_sec}
+            />
+            <div className="row full-container">
+              <div className="col-md-1"><Menu/></div>
+              <div className="col-md-11">
+                {dashboard}
+              </div>
+            </div>
         </div>
 
       </Router>

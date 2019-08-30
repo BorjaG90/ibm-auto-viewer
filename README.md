@@ -26,7 +26,7 @@ A simple webapp to view advanced data.
 
 ### Frontend
 <a href="https://es.reactjs.org/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/reactJs.png" width=50 alt="ReactJS"></a>
-<a href="https://materializecss.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/materialize.png" width=50 alt="Materialize"></a>
+<a href="https://getbootstrap.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/bootstrap.png" width=50 alt="Bootstrap"></a>
 <a href="https://www.chartjs.org/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/chartjs.png" width=50 alt="Chart.js"></a>
 
 ### Platforms

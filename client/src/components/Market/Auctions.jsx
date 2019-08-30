@@ -4,14 +4,16 @@ import Auction from './Auction'
 
 import './style.css';
 
-class Market extends PureComponent {
+class Auctions extends PureComponent {
 
-  state = {
-    market: []
-  }
+  state = { market: [] }
 
   componentDidMount() {
-    fetch(`http://localhost:4000/api/market/`) // Petición GET
+    let url = `http://localhost:4000/api/market/`
+    if(this.props.position)
+      url= `http://localhost:4000/api/market/${this.props.position}`
+
+    fetch(url) // Petición GET
 			.then(res => res.json())
 			.then(data => {
         console.log(data);
@@ -20,10 +22,8 @@ class Market extends PureComponent {
   }
 
   render(){
-    return <React.Fragment>
-      <h3 className="market-title">Mercado</h3>
-      <table className="responsive-table centered striped">
-        <thead>
+    return <table className="table table-striped">
+        <thead className="thead-dark">
           <tr>
             <th>Nombre / ID</th>
             <th>Fecha</th>
@@ -31,7 +31,6 @@ class Market extends PureComponent {
             <th>Edad</th>
             <th>Media</th>
             <th>Puja</th>
-            <th></th>
           </tr> 
         </thead>
         <tbody>
@@ -40,8 +39,7 @@ class Market extends PureComponent {
           )}
         </tbody>
       </table>
-    </React.Fragment>
   }
 }
 
-export default Market
+export default Auctions

@@ -1,10 +1,13 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { Route, Switch } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
-import Roster from '../Roster/Roster'
-import Juniors from '../Roster/Juniors'
-import Market from '../Market/Market';
+import Container from '../Team_Info/Container'
 import PlayerProfile from '../Player_Profile/Profile'
+import SeniorRoster from '../Roster/SeniorContainer'
+import JuniorRoster from '../Roster/JuniorContainer'
+import Market from '../Market/Container'
+
 
 class Dashboard extends Component {
   componentDidMount() {
@@ -16,17 +19,20 @@ class Dashboard extends Component {
     return(
       <div className="dashboard">
         <Switch>
+          <Route path="/team_info" render={props => 
+            <Container {...props} team_id={this.props.team_id} />
+          }/>
 
           <Route path="/roster" render={props => 
-            <Roster {...props} team_id={this.props.team_id} />
+            <SeniorRoster {...props} team_id={this.props.team_id} />
           }/>
 
           <Route path="/juniors" render={props => 
-            <Juniors {...props} team_id={this.props.team_id} />
+            <JuniorRoster {...props} team_id={this.props.team_id} />
           }/>
 
-          <Route path="/market" render={props => <Market /> }/>
-
+          <Route path="/market" component={Market}/>
+          
           <Route path="/players/:id" component={PlayerProfile}/>
 
         </Switch>
@@ -34,5 +40,8 @@ class Dashboard extends Component {
     )
   }
 }
+
+// Validation
+Dashboard.propTypes = { team_id: PropTypes.string.isRequired }
 
 export default Dashboard
