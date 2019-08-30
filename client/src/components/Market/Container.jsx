@@ -1,11 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import General from './General'
-import Pivot from './Pivot'
-import AlaPivot from './AlaPivot'
-import Alero from './Alero'
-import Escolta from './Escolta'
-import Base from './Base'
+import Auctions from './Auctions'
 
 import './style.css';
 
@@ -17,7 +12,7 @@ class Container extends PureComponent {
           <div className="col-md-12">
             <h1>Mercado General</h1>
             <div className="div-scroll">
-              <General />
+              <Auctions />
             </div>
           </div>
         </div>
@@ -25,19 +20,19 @@ class Container extends PureComponent {
           <div className="col-md-4">
             <h1>Mercado Pivot</h1>
             <div className="div-scroll">
-              <Pivot/>
+              <Auctions position="center" />
             </div>
           </div>
           <div className="col-md-4">
             <h1>Mercado Ala-Pivot</h1>
             <div className="div-scroll">
-              <AlaPivot/>
+              <Auctions position="powerforward" />
             </div>
           </div>
           <div className="col-md-4">
           <h1>Mercado Alero</h1>
             <div className="div-scroll">
-              <Alero/>
+              <Auctions position="smallforward" />>
             </div>
           </div>
         </div>
@@ -45,13 +40,13 @@ class Container extends PureComponent {
           <div className="col-md-6">
             <h1>Mercado Escolta</h1>
             <div className="div-scroll">
-              <Escolta/>
+              <Auctions position="shootingguard" />
             </div>
           </div>
           <div className="col-md-6">
             <h1>Mercado Base</h1>
             <div className="div-scroll">
-              <Base/>
+              <Auctions position="pointguard" />
             </div>
           </div>
         </div>

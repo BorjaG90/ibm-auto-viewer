@@ -4,12 +4,16 @@ import Auction from './Auction'
 
 import './style.css';
 
-class Base extends PureComponent {
+class Auctions extends PureComponent {
 
   state = { market: [] }
 
   componentDidMount() {
-    fetch(`http://localhost:4000/api/market/pointguard`) // Petición GET
+    let url = `http://localhost:4000/api/market/`
+    if(this.props.position)
+      url= `http://localhost:4000/api/market/${this.props.position}`
+
+    fetch(url) // Petición GET
 			.then(res => res.json())
 			.then(data => {
         console.log(data);
@@ -38,4 +42,4 @@ class Base extends PureComponent {
   }
 }
 
-export default Base
+export default Auctions
