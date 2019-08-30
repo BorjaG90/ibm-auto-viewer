@@ -36,8 +36,8 @@ class SumFinances extends PureComponent {
         <td></td>
         <td>{nf.format(salary)}</td>
         <td></td>
-        <td>{nf.format((salary * 13))}</td>
-        <td>{nf.format(salary  * 13 * (years/n_play))}</td>
+        <td className="bg-danger">{nf.format((salary * 13))}</td>
+        <td className="bg-danger">{nf.format(salary  * 13 * (years/n_play))}</td>
       </tr>
     </React.Fragment>
   }

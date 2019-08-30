@@ -8,6 +8,15 @@ class Attribute extends PureComponent {
   render(){
     const { player } = this.props;
 
+    let mental19
+    if(player.juvenil){
+      mental19 = <b>
+        {((player.mental/100)+(3.20*(19-player.age))).toFixed(2)}
+      </b>
+    }else{
+      mental19=""
+    }
+
     return <React.Fragment>
       <tr id={"play_" + player._id}>
         <td>
@@ -24,6 +33,7 @@ class Attribute extends PureComponent {
         <td>{player.defense / 100}</td>
         <td>{player.physic / 100}</td>
         <td><b>{player.mental / 100}</b></td>
+        <td>{mental19}</td>
         <td>{player.two}</td>
         <td>{player.three}</td>
         <td>{player.free}</td>

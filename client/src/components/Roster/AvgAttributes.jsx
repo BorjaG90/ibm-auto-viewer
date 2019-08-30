@@ -8,7 +8,7 @@ class AvgAttributes extends PureComponent {
     const { players } = this.props;
     let age, total, off, def, phy, mental, t2, t3, ft, dunk, ass, reb, ste, blk;
     let mark, speed, resistance, fight, lead, loyal, ambition, level, exp, n_play;
-
+    
     age = 0
     total = 0
     off = 0
@@ -72,6 +72,9 @@ class AvgAttributes extends PureComponent {
         <td>{(def / 100 / n_play).toFixed(2)}</td>
         <td>{(phy / 100 / n_play).toFixed(2)}</td>
         <td><b>{(mental / 100 / n_play).toFixed(2)}</b></td>
+        <td className="bg-primary">
+          <b>{((mental/100/n_play)+(3.20*(19-age/n_play))).toFixed(2)}</b>
+        </td>
         <td>{(t2 / n_play).toFixed(2)}</td>
         <td>{(t3 / n_play).toFixed(2)}</td>
         <td>{(ft / n_play).toFixed(2)}</td>

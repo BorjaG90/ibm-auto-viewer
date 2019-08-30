@@ -44,8 +44,8 @@ class AvgFinances extends PureComponent {
         <td>{(years / n_play).toFixed(2)}</td>
         <td>{nf.format(salary / n_play)}</td>
         <td>{(canon / 100 / n_play).toFixed(2)}%</td>
-        <td>{nf.format((salary * 13)/ n_play)}</td>
-        <td>{nf.format((salary  * 13 * (years/n_play)) / n_play)}</td>
+        <td className="bg-primary">{nf.format((salary * 13)/ n_play)}</td>
+        <td className="bg-primary">{nf.format((salary  * 13 * (years/n_play)) / n_play)}</td>
       </tr>
     </React.Fragment>
   }

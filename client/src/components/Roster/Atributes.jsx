@@ -13,7 +13,7 @@ class Attributes extends PureComponent {
       <thead className="thead-dark">
         <tr>
             <th colSpan="3">Info</th>
-            <th colSpan="5">Media</th>
+            <th colSpan="6">Media</th>
             <th colSpan="5">Ataque</th>
             <th colSpan="4">Defensa</th>
             <th colSpan="3">Físico</th>
@@ -22,6 +22,7 @@ class Attributes extends PureComponent {
           <tr>
             <th>Nombre</th><th>Pos.</th><th>Edad</th><th>Total</th>
             <th>Ataque</th><th>Defensa</th><th>Físico</th><th>Mental</th>
+            <th>M19</th>
             <th>T2</th><th>T3</th><th>TL</th><th>Mate</th><th>Pase</th>
             <th>Rebote</th><th>Robo</th><th>Tapón</th><th>Marcaje</th>
             <th>Velocidad</th><th>Resistencia</th><th>Lucha</th>
