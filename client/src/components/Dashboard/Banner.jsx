@@ -32,7 +32,7 @@ class Banner extends PureComponent {
           <div></div>
           <div className="navbar-expand-lg navbar-right">
             <a href="#!" style={titleStyle}> {username} </a>
-            <a href="#!" style={titleStyle}> {teamname} </a>
+            <a href="/team_info" style={titleStyle}> {teamname} </a>
             <a href="#!" style={titleStyle}> {nf.format(money)} </a>
           </div>
         </nav>

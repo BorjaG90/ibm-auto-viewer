@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import Attribute from './Attribute'
 
 import './style.css';
+import AvgAttributes from './AvgAttributes';
 
 
 class Attributes extends PureComponent {
@@ -32,6 +33,7 @@ class Attributes extends PureComponent {
       {this.props.players.map(player => 
         <Attribute player={player} key={player._id} />
       )}
+        <AvgAttributes players={this.props.players} />
       </tbody>
     </table>
   }
