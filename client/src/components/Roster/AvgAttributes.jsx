@@ -64,8 +64,8 @@ class AvgAttributes extends PureComponent {
 
     return <React.Fragment>
       <tr className="table-primary">
-        <th scope="row">Average</th>
-        <td></td>
+        <th scope="row">Media</th>
+        <td className="bg-warning"><b><i>{n_play} J.</i></b></td>
         <td>{(age / n_play).toFixed(2)}</td>
         <td><b>{(total / 100 / n_play).toFixed(2)}</b></td>
         <td>{(off / 100 / n_play).toFixed(2)}</td>

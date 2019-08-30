@@ -28,7 +28,7 @@ class SumFinances extends PureComponent {
     return <React.Fragment>
       <tr className="table-warning">
         <th scope="row">Total</th>
-        <td></td>
+        <td><b><i>{n_play} J.</i></b></td>
         <td></td>
         <td></td>
         <td></td>

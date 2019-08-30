@@ -35,7 +35,7 @@ class AvgFinances extends PureComponent {
     
     return <React.Fragment>
       <tr className="table-primary">
-        <th scope="row">Average</th>
+        <th scope="row">Media</th>
         <td></td>
         <td>{(age / n_play).toFixed(2)}</td>
         <td><b>{(total / 100 / n_play).toFixed(2)}</b></td>
