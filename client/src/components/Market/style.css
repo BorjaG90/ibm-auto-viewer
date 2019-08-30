@@ -2,3 +2,8 @@
   height:400px;
   overflow-y: scroll;
 }
+
+.div-scroll thead th {
+  position: sticky;
+  top: 0; 
+}
