@@ -1,7 +1,9 @@
-.profile-card-title {
-  text-align: center;
-  margin-top:0.1rem;
+.div-player-scroll {
+  height:200px;
+  overflow-y: scroll;
 }
-h4.profile-card-title {
-  margin-bottom:0.1rem;
+
+.div-player-scroll thead th {
+  position: sticky;
+  top: 0; 
 }

@@ -45,11 +45,11 @@ class Attributes extends PureComponent {
             <td>{player.ambition}</td>
             <td>{player.level}</td>
             <td>{player.exp}</td>
-            <td>{player.offense / 100}</td>
-            <td>{player.defense / 100}</td>
-            <td>{player.physic / 100}</td>
-            <td>{player.mental / 100}</td>
-            <td>{player.total / 100}</td>
+            <td>{(player.offense ? player.offense  : 0) / 100}</td>
+            <td>{(player.defense ? player.defense  : 0) / 100}</td>
+            <td>{(player.physic ? player.physic  : 0) / 100}</td>
+            <td>{(player.mental ? player.mental  : 0) / 100}</td>
+            <td>{(player.total ? player.total  : 0) / 100}</td>
           </tr>
         </tbody>
       </table>

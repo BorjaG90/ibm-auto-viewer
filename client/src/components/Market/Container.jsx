@@ -11,7 +11,7 @@ class Container extends PureComponent {
         <div className="row">
           <div className="col-md-12">
             <h1>Mercado General</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions />
             </div>
           </div>
@@ -19,19 +19,19 @@ class Container extends PureComponent {
         <div className="row">
           <div className="col-md-4">
             <h1>Mercado Pivot</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions position="center" />
             </div>
           </div>
           <div className="col-md-4">
             <h1>Mercado Ala-Pivot</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions position="powerforward" />
             </div>
           </div>
           <div className="col-md-4">
           <h1>Mercado Alero</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions position="smallforward" />>
             </div>
           </div>
@@ -39,13 +39,13 @@ class Container extends PureComponent {
         <div className="row">
           <div className="col-md-6">
             <h1>Mercado Escolta</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions position="shootingguard" />
             </div>
           </div>
           <div className="col-md-6">
             <h1>Mercado Base</h1>
-            <div className="div-scroll">
+            <div className="div-market-scroll">
               <Auctions position="pointguard" />
             </div>
           </div>

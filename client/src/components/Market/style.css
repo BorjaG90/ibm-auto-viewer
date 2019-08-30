@@ -1,9 +1,9 @@
-.div-scroll {
+.div-market-scroll {
   height:400px;
   overflow-y: scroll;
 }
 
-.div-scroll thead th {
+.div-market-scroll thead th {
   position: sticky;
   top: 0; 
 }

@@ -5,14 +5,6 @@ import { Link } from 'react-router-dom'
 import './style.css';
 
 class Finance extends PureComponent {
-  state = {
-    isShown: false
-  }
-
-  showAttributes(e){
-    this.setState({isShown: !this.state.isShown});
-  }
-
   render(){
     const { player } = this.props;
 

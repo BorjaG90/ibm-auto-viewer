@@ -24,7 +24,7 @@ class ProfileData extends PureComponent {
           <div className="info col-md-12">
             <table className="table table-borderless">
               <thead className="thead-dark">
-                <tr> <th colSpan="2">Info</th> </tr>
+                <tr><th colSpan="2">Info</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -52,7 +52,7 @@ class ProfileData extends PureComponent {
           <div className="features col-md-6">
             <table className="table table-borderless">
               <thead className="thead-dark">
-                <tr> <th colSpan="2">Características</th> </tr>
+                <tr><th colSpan="2">Características</th></tr>
               </thead>
               <tbody>
                 <tr>
@@ -70,7 +70,7 @@ class ProfileData extends PureComponent {
           <div className="contract col-md-6">
             <table className="table table-borderless">
               <thead className="thead-dark">
-                <tr> <th colSpan="2">Contrato</th> </tr>
+                <tr><th colSpan="2">Contrato</th></tr>
               </thead>
               <tbody>
                 <tr>
