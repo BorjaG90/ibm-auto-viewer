@@ -5,11 +5,66 @@ import './style.css';
 
 class StatsTotals extends PureComponent {
   render(){
-    const { totals } = this.props;
+    const { totals, tot_career } = this.props;
     
     return <React.Fragment>
-      <h2>Totales</h2>
+      <h4>Totales</h4>
 
+      <h5>Carrera</h5>
+      <table className="table table-striped">
+        <thead className="thead-dark">
+          <tr>
+            <th>Comp.</th>
+            <th>Part.</th>
+            <th>Pts</th>
+            <th>T2C</th>
+            <th>T2I</th>
+            <th>T3C</th>
+            <th>T3I</th>
+            <th>TLC</th>
+            <th>TLI</th>
+            <th>RebD</th>
+            <th>RebO</th>
+            <th>RebT</th>
+            <th>Asi</th>
+            <th>Rob</th>
+            <th>TapF</th>
+            <th>TapC</th>
+            <th>Pér</th>
+            <th>FalC</th>
+            <th>FalR</th>
+            <th>Min</th>
+          </tr>
+        </thead>
+        <tbody>
+          {tot_career.map(total =>
+            <tr key={total._id.game_type}>
+              <td>{total._id.game_type}</td>
+              <td>{total.countGames}</td>
+              <td><b>{total.sumPoints}</b></td>
+              <td>{total.sumT2c}</td>
+              <td>{total.sumT2i}</td>
+              <td>{total.sumT3c}</td>
+              <td>{total.sumT3i}</td>
+              <td>{total.sumTlc}</td>
+              <td>{total.sumTli}</td>
+              <td>{total.sumRebd}</td>
+              <td>{total.sumRebo}</td>
+              <td><b>{(total.sumRebd+total.sumRebo)}</b></td>
+              <td><b>{total.sumAss}</b></td>
+              <td><b><i>{total.sumSte}</i></b></td>
+              <td><b><i>{total.sumBlkf}</i></b></td>
+              <td>{total.sumBlkc}</td>
+              <td>{total.sumTurn}</td>
+              <td>{total.sumFoulr}</td>
+              <td>{total.sumFoulc}</td>
+              <td>{(total.sumMin + total.sumSeg / 60).toFixed(0)}:{String(total.sumSeg % 60).padStart(2, '0')}</td>
+            </tr>
+          )}
+        </tbody>
+      </table>
+
+      <h5>Por Temporada</h5>
       <div className="div-player-scroll">
         <table className="table table-striped">
           <thead className="thead-dark">
@@ -66,11 +121,13 @@ class StatsTotals extends PureComponent {
           </tbody>
         </table>
       </div>
+      
     </React.Fragment>
   }
 };
 
 // Validation
 StatsTotals.propTypes = { totals: PropTypes.array.isRequired }
+StatsTotals.propTypes = { tot_career: PropTypes.array.isRequired }
 
 export default StatsTotals
