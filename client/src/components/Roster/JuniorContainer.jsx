@@ -21,6 +21,7 @@ class JuniorContainer extends PureComponent {
     })
     .catch(console.log(`ERROR: ${this.props.team_id}`))
   }
+  
   render(){
     let features_html, finances_html
     if(this.state.isLoading) {

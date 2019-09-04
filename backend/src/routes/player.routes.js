@@ -2,7 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 require('../models/progression.model');
+require('../models/player_stat.model');
 const Players = require('../models/player.model');
+
 
 router.get('/', async (req, res) => {
   const seniors = await Players.find( {juvenil: false} )
@@ -20,7 +22,7 @@ router.get('/juniors', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
   const player = await Players.findById(req.params.id)
-    .populate('progressions');
+    .populate('progressions').populate('stats');
   res.json(player);
 });
 
