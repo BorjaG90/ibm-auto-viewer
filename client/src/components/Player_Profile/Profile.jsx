@@ -77,7 +77,7 @@ class Profile extends PureComponent {
     // Stats
     let isStats;
     if(stats !== undefined && stats.length >0){
-      isStats = <Stats stats={stats} />
+      isStats = <Stats player_id={this.props.match.params.id} />
     }else{ isStats = <br/> }
 
     return <div className="profile-container">
@@ -95,11 +95,11 @@ class Profile extends PureComponent {
       </div>
 
       <div className="row">
-        {isProgression}
+        {isStats}
       </div>
 
       <div className="row">
-        {isStats}
+        {isProgression}
       </div>
 
     </div>

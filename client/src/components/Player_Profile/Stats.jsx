@@ -1,63 +1,54 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types'
 
+import StatsAvg from './StatsAvg'
+import StatsTotal from './StatsTotals'
+
 import './style.css';
 
 class Stats extends PureComponent {
-
-  state = { team_info: {}, players: [] , isLoading: true}
+  state = { averages: {}, totals:{} }
 
   componentDidMount() {
-    fetch(`http://localhost:4000/api/roster/${this.props.team_id}`) // Petición GET
+    fetch(
+      `http://localhost:4000/api/stats/player/${this.props.player_id}/season_average`
+    ) // Petición GET
     .then(res => res.json())
     .then(data => {
       console.log(data);
-      console.log(this.props.type)
-      this.setState({team_info: data, players: data.seniors, isLoading: false});
-      this.forceUpdate();
+      this.setState({averages: data});
     })
-    .catch(console.log(`ERROR: ${this.props.team_id}`))
+    .catch(console.log(`ERROR Stats Avg: ${this.props.player_id}`))
+
+    fetch(
+      `http://localhost:4000/api/stats/player/${this.props.player_id}/season_total`
+    ) // Petición GET
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      this.setState({totals: data});
+    })
+    .catch(console.log(`ERROR Stats Tot: ${this.props.player_id}`))
   }
+
   render(){
-    //const { stats } = this.props;
+    const { averages, totals } = this.state;
+    // Averages
+    let isAverages;
+    if(averages !== undefined && averages.length > 0){
+      console.log(averages)
+      isAverages = <StatsAvg averages={averages} />
+    }else{ isAverages = <br/> }
 
     return <div className="col s12 stats">
       <h1>!!!- Estadísticas -</h1>
-      <table className="table table-striped">
-        <thead className="thead-dark">
-          <tr>
-            <th>Temp.</th>
-            <th>Comp.</th>
-            <th>Pts</th>
-            <th>T2C</th>
-            <th>T2I</th>
-            <th>T3C</th>
-            <th>T3I</th>
-            <th>TLC</th>
-            <th>TLI</th>
-            <th>RebD</th>
-            <th>RebO</th>
-            <th>RebT</th>
-            <th>Asi</th>
-            <th>Rob</th>
-            <th>TapF</th>
-            <th>TapC</th>
-            <th>Pér</th>
-            <th>FalC</th>
-            <th>FalR</th>
-            <th>Min</th>
-            <th>Val</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr></tr>
-        </tbody>
-        </table>
+      {isAverages}
+      <p>Stats</p>
     </div>
   }
 }
   
 // Validation
-Stats.propTypes = { stats: PropTypes.array.isRequired }
+Stats.propTypes = { player_id: PropTypes.string.isRequired }
 
 export default Stats

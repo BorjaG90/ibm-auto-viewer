@@ -24,6 +24,7 @@ const PlayerStatSchema = new mongoose.Schema({
   foulr: { type: Number, required: true },
   foulc: { type: Number, required: true },
   min: { type: Number, required: true },
+  seg: { type: Number, required: true },
   val: { type: Number, required: true }
 });
 
