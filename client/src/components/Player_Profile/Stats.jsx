@@ -33,17 +33,25 @@ class Stats extends PureComponent {
 
   render(){
     const { averages, totals } = this.state;
+    
     // Averages
     let isAverages;
     if(averages !== undefined && averages.length > 0){
       console.log(averages)
       isAverages = <StatsAvg averages={averages} />
     }else{ isAverages = <br/> }
+    
+    // Totals
+    let isTotals;
+    if(totals !== undefined && totals.length > 0){
+      console.log(totals)
+      isTotals = <StatsTotal totals={totals} />
+    }else{ isTotals = <br/> }
 
     return <div className="col s12 stats">
       <h1>!!!- Estadísticas -</h1>
       {isAverages}
-      <p>Stats</p>
+      {isTotals}
     </div>
   }
 }

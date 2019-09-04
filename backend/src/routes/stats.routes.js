@@ -36,7 +36,9 @@ router.get('/player/:id/average', async (req, res) => {
         avgFoulr: { $avg: "$foulr"},
         avgFoulc: { $avg: "$foulc"},
         avgMin: { $avg: "$min"},
-        avgVal: { $avg: "$val"}
+        avgSeg: { $avg: "$seg"},
+        avgVal: { $avg: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
@@ -74,7 +76,9 @@ router.get('/player/:id/season_average', async (req, res) => {
         avgFoulr: { $avg: "$foulr"},
         avgFoulc: { $avg: "$foulc"},
         avgMin: { $avg: "$min"},
-        avgVal: { $avg: "$val"}
+        avgSeg: { $avg: "$seg"},
+        avgVal: { $avg: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
@@ -113,7 +117,9 @@ router.get('/player/:id/average/:season', async (req, res) => {
         avgFoulr: { $avg: "$foulr"},
         avgFoulc: { $avg: "$foulc"},
         avgMin: { $avg: "$min"},
-        avgVal: { $avg: "$val"}
+        avgSeg: { $avg: "$seg"},
+        avgVal: { $avg: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
@@ -151,7 +157,9 @@ router.get('/player/:id/total', async (req, res) => {
         sumFoulr: { $sum: "$foulr"},
         sumFoulc: { $sum: "$foulc"},
         sumMin: { $sum: "$min"},
-        sumVal: { $sum: "$val"}
+        sumSeg: { $sum: "$seg"},
+        sumVal: { $sum: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
@@ -190,7 +198,9 @@ router.get('/player/:id/season_total', async (req, res) => {
         sumFoulr: { $sum: "$foulr"},
         sumFoulc: { $sum: "$foulc"},
         sumMin: { $sum: "$min"},
-        sumVal: { $sum: "$val"}
+        sumSeg: { $sum: "$seg"},
+        sumVal: { $sum: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
@@ -229,12 +239,13 @@ router.get('/player/:id/total/:season', async (req, res) => {
         sumFoulr: { $sum: "$foulr"},
         sumFoulc: { $sum: "$foulc"},
         sumMin: { $sum: "$min"},
-        sumVal: { $sum: "$val"}
+        sumSeg: { $sum: "$seg"},
+        sumVal: { $sum: "$val"},
+        countGames: {$sum: 1 }
       },
     }
   ]);
   res.json(sum);
 });
-
 
 module.exports = router;

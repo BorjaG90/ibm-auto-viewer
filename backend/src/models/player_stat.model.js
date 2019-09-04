@@ -25,7 +25,8 @@ const PlayerStatSchema = new mongoose.Schema({
   foulc: { type: Number, required: true },
   min: { type: Number, required: true },
   seg: { type: Number, required: true },
-  val: { type: Number, required: true }
+  val: { type: Number, required: true },
+  countGames: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Player_Stat', PlayerStatSchema);

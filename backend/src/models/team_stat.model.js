@@ -22,7 +22,8 @@ const TeamStatSchema = new mongoose.Schema({
   blkc: { type: Number, required: true },
   foulr: { type: Number, required: true },
   foulc: { type: Number, required: true },
-  val: { type: Number, required: true }
+  val: { type: Number, required: true },
+  countGames: { type: Number, required: true }
 });
 
 module.exports = mongoose.model('Team_Stat', TeamStatSchema);

@@ -4,34 +4,9 @@ import PropTypes from 'prop-types'
 import './style.css';
 
 class StatsAvg extends PureComponent {
-  /*state = { averages: {}, totals:{} }
-
-  componentDidMount() {
-    fetch(
-      `http://localhost:4000/api/stats/player/${this.props.player_id}/season_average`
-    ) // Petición GET
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      this.setState({averages: data});
-    })
-    .catch(console.log(`ERROR: ${this.props.player_id}`))
-
-    fetch(
-      `http://localhost:4000/api/stats/player/${this.props.player_id}/season_total`
-    ) // Petición GET
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
-      this.setState({totals: data});
-    })
-    .catch(console.log(`ERROR: ${this.props.player_id}`))
-  }*/
-
   render(){
     const { averages } = this.props;
-    console.log("avg")
-    console.log(averages)
+
     return <React.Fragment>
       <h2>Medias</h2>
 
@@ -41,13 +16,14 @@ class StatsAvg extends PureComponent {
             <tr>
               <th>Temp.</th>
               <th>Comp.</th>
+              <th>Part.</th>
               <th>Pts</th>
-              <th>T2C</th>
-              <th>T2I</th>
-              <th>T3C</th>
-              <th>T3I</th>
-              <th>TLC</th>
-              <th>TLI</th>
+              <th>T2</th>
+              <th>T2%</th>
+              <th>T3</th>
+              <th>T3%</th>
+              <th>TL</th>
+              <th>TL%</th>
               <th>RebD</th>
               <th>RebO</th>
               <th>RebT</th>
@@ -67,13 +43,20 @@ class StatsAvg extends PureComponent {
               <tr key={average._id.game_type}>
                 <td>{average._id.season}</td>
                 <td>{average._id.game_type}</td>
+                <td>{average.countGames}</td>
                 <td><b>{average.avgPoints.toFixed(2)}</b></td>
-                <td>{average.avgT2c.toFixed(2)}</td>
-                <td>{average.avgT2i.toFixed(2)}</td>
-                <td>{average.avgT3c.toFixed(2)}</td>
-                <td>{average.avgT3i.toFixed(2)}</td>
-                <td>{average.avgTlc.toFixed(2)}</td>
-                <td>{average.avgTli.toFixed(2)}</td>
+                <td>{average.avgT2c.toFixed(2)}/{average.avgT2i.toFixed(2)}</td>
+                <td>{
+                  (average.avgT2i !== 0 ?(average.avgT2c/average.avgT2i)*100: 0)
+                  .toFixed(2) }%</td>
+                <td>{average.avgT3c.toFixed(2)}/{average.avgT3i.toFixed(2)}</td>
+                <td>{
+                  (average.avgT3i !== 0 ?(average.avgT3c/average.avgT3i)*100: 0)
+                  .toFixed(2) }%</td>
+                <td>{average.avgTlc.toFixed(2)}/{average.avgTli.toFixed(2)}</td>
+                <td>{
+                  (average.avgTli !== 0 ?(average.avgTlc/average.avgTli)*100: 0)
+                  .toFixed(2) }%</td>
                 <td>{average.avgRebd.toFixed(2)}</td>
                 <td>{average.avgRebo.toFixed(2)}</td>
                 <td><b>{(average.avgRebd+average.avgRebo).toFixed(2)}</b></td>
@@ -84,7 +67,7 @@ class StatsAvg extends PureComponent {
                 <td>{average.avgTurn.toFixed(2)}</td>
                 <td>{average.avgFoulr.toFixed(2)}</td>
                 <td>{average.avgFoulc.toFixed(2)}</td>
-                <td>{average.avgMin.toFixed(0)}:{average.avgMin.toFixed(0)}</td>
+                <td>{average.avgMin.toFixed(0)}:{average.avgSeg.toFixed(0)}</td>
                 <td><b>{average.avgVal.toFixed(2)}</b></td>
               </tr>
             )}
